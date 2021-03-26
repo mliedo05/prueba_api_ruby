@@ -32,6 +32,11 @@ def build_web_page(data)
         fotos["img_src"]
         html += "<li><img src='#{fotos['img_src']}'></li>\n" 
     end
+
+    html += '</ul>
+    </body>
+    </html>'
+    return html
 end
 
 data = request("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=","r0IVneVCawcka91m55mRUuVGhMuSmgz3ibtoJhzv")
