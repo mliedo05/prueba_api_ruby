@@ -14,7 +14,9 @@ def request(link,key)
     return JSON.parse (response.read_body)
 end
 
-html = 
+def build_web_page(data)
+
+    html = 
     '<!DOCTYPE html>
     <html lang="es">
     <head>
@@ -25,10 +27,11 @@ html =
     </head>
     <body>
     <ul>'
-    
-data["photos"].each do |fotos|
-    fotos["img_src"]
-    html += "<li><img src='#{fotos['img_src']}'></li>\n" 
+
+    data["photos"].each do |fotos|
+        fotos["img_src"]
+        html += "<li><img src='#{fotos['img_src']}'></li>\n" 
+    end
 end
 
 data = request("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=","r0IVneVCawcka91m55mRUuVGhMuSmgz3ibtoJhzv")
