@@ -39,4 +39,7 @@ def build_web_page(data)
     return html
 end
 
+
 data = request("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=","r0IVneVCawcka91m55mRUuVGhMuSmgz3ibtoJhzv")
+
+File.write('index.html', build_web_page(data))
